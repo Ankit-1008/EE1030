@@ -1,0 +1,28 @@
+\documentclass{standalone}
+\usepackage{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}
+
+
+\draw (0,0) -- (0,4) node[label={[font=\footnotesize]left:A}]{} 
+    to[resistor, l=$10\,\Omega$, *-*] (2,6) node[label={[font=\footnotesize]above:B}]{} 
+    to[resistor, l=$5\,\Omega$, *-*] (4,4) node[label={[font=\footnotesize]above:C}]{};
+
+\draw (0,4) 
+    to[resistor, l=$5\,\Omega$, *-*] (2,2) node[label={[font=\footnotesize]below:D}]{} 
+    to[resistor, l=$10\,\Omega$, *-*] (4,4);
+
+\draw (4,4) -- (4,0);
+\draw (2,6) to[resistor, l=$5\,\Omega$, *-*] (2,2);
+
+
+\draw (0,0) to[resistor, l=$5\,\Omega$] (2,0);
+
+\draw (2,0) to[battery1, l=$10\,V$] (4,0);
+
+\end{circuitikz}
+
+\end{document}
+
