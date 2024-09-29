@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.7)  29 SEP 2024 17:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.7)  29 SEP 2024 22:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1895,21 +1895,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 75--78
 
  []
 
-<Figure_1.png, id=31, 462.528pt x 346.896pt>
-File: Figure_1.png Graphic file (type png)
-<use Figure_1.png>
-Package pdftex.def Info: Figure_1.png  used on input line 86.
+<figs/Figure_1.png, id=31, 462.528pt x 346.896pt>
+File: figs/Figure_1.png Graphic file (type png)
+<use figs/Figure_1.png>
+Package pdftex.def Info: figs/Figure_1.png  used on input line 86.
 (pdftex.def)             Requested size: 182.09764pt x 136.57513pt.
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-] [2 <./Figure_1.png>]
-(./assignment2.aux)
+] [2 <./figs/Figure_1.png>] (./assignment2.aux)
 Package rerunfilecheck Info: File `assignment2.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 49774 strings out of 480247
- 1164424 string characters out of 5896152
+ 49775 strings out of 480247
+ 1164459 string characters out of 5896152
  1626007 words of memory out of 5000000
  66895 multiletter control sequences out of 15000+600000
  534473 words of font info for 161 fonts, out of 8000000 for 9000
