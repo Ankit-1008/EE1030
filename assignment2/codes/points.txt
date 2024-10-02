@@ -1,0 +1,9 @@
+//OUTPUT 
+
+Dividing into 4 parts:
+-1.00 3.50
+0.00 5.00
+1.00 6.50
+
+
+
