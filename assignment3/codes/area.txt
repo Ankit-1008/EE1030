@@ -1,4 +1,0 @@
-//OUTPUT:
-The area of the region between the curves y = x^2 and y = x is: 0.33 sq units
-
-
