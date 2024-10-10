@@ -1,0 +1,136 @@
+%iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,onecolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+%\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{float}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+
+% Marks the beginning of the document
+\begin{document}
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{\textbf{29-06-2022 Shift-2}}
+\author{EE24BTECH11004 - ANKIT JAINAR}
+\maketitle
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\setlength{\columnsep}{2.5em}
+\begin{enumerate}
+\item The probability that a relation $R$ from $\{x, y\}$ to $\{x, y\}$ is both symmetric and transitive, is equal to
+\begin{enumerate}
+    \item $\frac{5}{16}$
+    \item $\frac{9}{16}$
+    \item $\frac{11}{16}$
+    \item $\frac{13}{16}$
+\end{enumerate}
+\item The number of values of $a \in \mathbb{N}$ such that the variance of $3, 7, 12, a, 43 - a$ is a natural number is
+\begin{enumerate}
+    \item $0$
+    \item $2$
+    \item $5$
+    \item infinite
+\end{enumerate}
+\item From the base of a pole of height 20 meters, the angle of elevation of the top of a tower is $60\degree$. The pole subtends an angle $30\degree$ at the top of the tower. Then the height of the tower is
+\begin{enumerate}
+    \item $15\sqrt{3}$
+    \item $20\sqrt{3}$
+    \item $20 + 10\sqrt{3}$
+    \item $30$
+\end{enumerate}
+\item Negation of the Boolean statement $(p \lor q) \Rightarrow ((\neg r) \lor p)$ is equivalent to
+\begin{enumerate}
+    \item $p \land (\neg q) \land r$
+    \item $(\neg p) \land (\neg q) \land r$
+    \item $(\neg p) \land q \land r$
+    \item $p \land q \land (\neg r)$
+\end{enumerate}
+\item Let $n \geq 5$ be an integer. If $9^n - 8n - 1 = 64 \alpha$ and $6^n - 5n - 1 = 25 \beta$, then $\alpha - \beta$ is equal to
+\begin{enumerate}
+    \item $1 + {^{n}C_2} (8 - 5) + {^{n}C_3} (8^2 - 5^2) + \ldots + {^{n}C_n} (8^{n-1} - 5^{n-1})$
+    \item $1 + {^{n}C_3} (8 - 5) + {^{n}C_4} (8^2 - 5^2) + \ldots + {^{n}C_n} (8^{n-2} - 5^{n-2})$
+    \item ${^{n}C_3} (8 - 5) + {^{n}C_4} (8^2 - 5^2) + \ldots + {^{n}C_n} (8^{n-2} - 5^{n-2})$
+    \item ${^{n}C_4} (8 - 5) + {^{n}C_5} (8^2 - 5^2) + \ldots + {^{n}C_n} (8^{n-3} - 5^{n-3})$
+\end{enumerate}
+\item Let $\vec{a} = \hat{i} - 2\hat{j} + 3\hat{k}$, $\vec{b} = \hat{i} + \hat{j} + \hat{k}$, and $\vec{c}$ be a vector such that 
+$\vec{a} + \left( \vec{b} \times \vec{c} \right) = 0$ and $\vec{b} \cdot \vec{c} = 5$. Then, the value of $3 \left( \vec{c} \cdot \vec{a} \right)$ is
+\begin{enumerate}
+    \item $10$
+    \item $15$
+    \item $20$
+    \item $25$
+\end{enumerate}
+\item Let $y = y(x)$, $x > 1$, be the solution of the differential equation 
+$(x - 1) \frac{dy}{dx} + 2xy = frac{1}{x - 1}$ with $y(2) = \frac{1 + e^4}{2e^4}$.
+If $y(3) = \frac{e^\alpha + 1}{\beta e^\alpha}$, then the value of $\alpha + \beta$ is equal to
+\item Let $3, 6, 9, 12, \dots$ up to $78$ terms and $5, 9, 13, 17, \dots$ up to $59$ terms be two series. The sum of the terms common to both series is
+\begin{enumerate}
+    \item $378$
+    \item $405$
+    \item $450$
+    \item $495$
+\end{enumerate}
+\item The number of solutions of the equation $\sin x = \cos^2 x$ in the interval $(0, 10)$ is
+\begin{enumerate}
+    \item $1$
+    \item $2$
+    \item $3$
+    \item $4$
+\end{enumerate}
+\item The total number of four-digit numbers such that each of the first three digits is divisible by the last digit, is equal to 
+\item For real numbers $a, b$ $(a > b > 0)$, let $ \text{Area}\left\{ (x, y) : x^2 + y^2 \leq a^2 \ \text{and} \ \frac{x^2}{a^2} + \frac{y^2}{b^2} \geq 1 \right\} = 30\pi $ and $ \text{Area}\left\{ (x, y) : x^2 + y^2 \geq b^2 \ \text{and} \ \frac{x^2}{a^2} + \frac{y^2}{b^2} \leq 1 \right\} = 18\pi $ Then the value of $(a - b)^2$ is equal to
+\item Let $f$ and $g$ be twice differentiable even functions on $(-2,2)$ such that $f\left(\frac{1}{4}\right) = 0, f\left(\frac{1}{2}\right) = 0, f(1) = 1$, and $g\left(\frac{3}{4}\right) = 0, g(1) = 2$. Then, the minimum number of solutions of $f(x) g''(x) + f'(x) g'(x) = 0$ in $(-2,2)$ is equal to
+\item Let $M = \begin{bmatrix} 0 & -\alpha \\ \alpha & 0 \end{bmatrix}$, where $\alpha$ is a non-zero real number, and $N = \sum_{k=1}^{49} M^{2k}$. If $(I - M^2)N = -2I$, then the positive integral value of $\alpha$ is
+\begin{enumerate}
+    \item $1$
+    \item $2$
+    \item $3$
+    \item $4$
+\end{enumerate}
+\item Let the coefficients of $x^{-1}$ and $x^{-3}$ in the expansion of $\left( 2x^5 - \frac{1}{x^5} \right)^{15}, x > 0,$ be $m$ and $n$ respectively. If $r$ is a positive integer such that $mn^2 = ^{15}C_r, 2^r$, then the value of $r$ is equal to
+\item Let $f(x)$ and $g(x)$ be two real polynomials of degree $2$ and $1$, respectively. If $f(g(x)) = 8x^2 - 2x$, and $g(f(x)) = 4x^2 + 6x + 1$, then the value of $f(2) + g(2)$ is
+\end{enumerate}
+\end{document}
+
