@@ -1,0 +1,219 @@
+%iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,onecolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+%\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{float}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+
+% Marks the beginning of the document
+\begin{document}
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{\textbf{25-01-2023 Shift-1}}
+\author{EE24BTECH11004 - ANKIT JAINAR}
+\maketitle
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\setlength{\columnsep}{2.5em}
+\begin{enumerate}
+\item Let $M$ be the maximum value of the product of two positive integers when their sum is 66. Let the sample space $S = \{ x \in \mathbb{Z} : x(66 - x) \geq \frac{5}{9}M \}$ and the event $A = \{ x \in S : x \text{ is a multiple of } 3 \}$. Then $P(A)$ is equal to:
+\begin{enumerate}
+    \item $\frac{15}{44}$
+    \item $\frac{1}{3}$
+    \item $\frac{1}{5}$
+    \item $\frac{7}{22}$
+\end{enumerate}
+
+\item Let $a$, $b$, and $c$ be three non-zero vectors such that $b \cdot c = 0$ and $a = \frac{b \times c}{2} - b$. If $d$ is a vector such that $b \cdot d = a \cdot b$, then $(a \times b) \cdot (c \times d)$ is equal to:
+            \begin{enumerate}
+                \item $\frac{3}{4}$
+                \item $\frac{1}{2}$
+                \item $-\frac{1}{4}$
+                \item $\frac{1}{4}$
+            \end{enumerate}
+        
+\item Let $y = y(x)$ be the solution curve of the differential equation 
+$e^{2y} \frac{dy}{dx} = \frac{1 + xy + (1 + \log x)}{x}$ 
+with $x > 0$, and $y(1) = 3$. Then $\frac{2y(x)}{9}$ is equal to:
+
+\begin{enumerate}
+    \item $\frac{2}{3} e^x (5 - 2x + 2 \log x)$
+    \item $\frac{2}{3} e^x (2x + 2 \log x - 3)$
+    \item $\frac{2}{3} e^x (3x - (1 + \log x) + 2)$
+    \item $\frac{2}{3} e^x (7 + 3x - 2 \log x)$
+\end{enumerate}
+
+\item The value of $\lim_{n \to \infty} \frac{1 + 2 - 3 + 4 + 5 - 6 + \dots + (3n - 2) + (3n - 1) - 3n}{\sqrt{2n^4 + 4n + 3} - \sqrt{n^4 + 5n + 4}}$ is:
+    \begin{enumerate}
+        \item $\frac{\sqrt{2} + 1}{2}$
+        \item $3(\sqrt{2} + 1)$
+        \item $\frac{3}{2} (\sqrt{2} + 1)$
+        \item $\frac{3}{2\sqrt{2}}$
+    \end{enumerate}
+
+\item The points of intersection of the line $ax + by = 0$, $(a \neq b)$ and the circle $x^2 + y^2 - 2x = 0$ are $A(\alpha, 0)$ and $B(1, \beta)$. The image of the circle with $AB$ as diameter in the line $x + y + 2 = 0$ is:
+    \begin{enumerate}
+        \item $x^2 + y^2 + 5x + 5y + 12 = 0$
+        \item $x^2 + y^2 + 3x + 5y + 8 = 0$
+        \item $x^2 + y^2 + 3x + 3y + 4 = 0$
+        \item $x^2 + y^2 - 5x - 5y + 12 = 0$
+    \end{enumerate}
+
+ \item The mean and variance of the marks obtained by the students n a test are $10$and $4$, respectively. Later, the marks of one of the students is increased from $8$ to $12$. If the new mean of the marks is $10.2$, then their new variance is equal to:
+    \begin{enumerate}
+        \item $4.04$
+        \item $4.08$
+        \item $3.96$
+        \item $3.92$
+    \end{enumerate}
+
+\item Let $y(x) = (1+x)(1+x^2)(1+x^4)(1+x^8)(1+x^{16})$. 
+Then $y' - y''$ at $x = -1$ is equal to:
+
+\begin{enumerate}
+    \item $976$
+    \item $464$
+    \item $496$
+    \item $944$
+\end{enumerate}
+\item The vector $\vec{a} = -\hat{i} + 2\hat{j} + \hat{k}$ is rotated through a right angle, passing through the y-axis in its way, and the resulting vector is $\vec{b}$. Then the projection of $3\vec{a} + \sqrt{2}\vec{b}$ on $\vec{c} = 5\hat{i} + 4\hat{j} + 3\hat{k}$ is:
+\begin{enumerate}
+    \item $3\sqrt{2}$
+    \item $1$
+    \item $\sqrt{6}$
+    \item $2\sqrt{3}$
+\end{enumerate}
+\item The minimum value of the function 
+$f(x) = \int_0^2 e^{|x-t|} \, dt$
+is:
+\begin{enumerate}
+    \item $2(e - 1)$
+    \item $2e - 1$
+    \item $2$
+    \item $e(e - 1)$
+\end{enumerate}
+
+\item Consider the lines $L_1$ and $L_2$ given by
+\[
+L_1: \frac{x-1}{2} = \frac{y-3}{1} = \frac{z-2}{2}
+\]
+\[
+L_2: \frac{x-2}{1} = \frac{y-2}{2} = \frac{z-3}{3}
+\]
+A line $L_3$ having direction ratios $1, -1, -2$, intersects $L_1$ and $L_2$ at the points $P$ and $Q$ respectively. Then the length of line segment $PQ$ is:
+\begin{enumerate}
+    \item $2\sqrt{6}$
+    \item $3\sqrt{2}$
+    \item $4\sqrt{3}$
+    \item $4$
+\end{enumerate}
+
+\item Let $x = 2$ be a local minima of the function 
+$f(x) = 2x^4 - 18x^2 + 8x + 12, \, x \in (-4, 4)$. 
+If $M$ is the local maximum value of the function $f$ in $(-4, 4)$, then $M$ is:
+\begin{enumerate}
+    \item $12\sqrt{6} - \frac{33}{2}$
+    \item $12\sqrt{6} - \frac{31}{2}$
+    \item $18\sqrt{6} - \frac{33}{2}$
+    \item $18\sqrt{6} - \frac{31}{2}$
+\end{enumerate}
+
+\item Let $z_1 = 2 + 3i$ and $z_2 = 3 + 4i$. The set 
+$S = \left\{ z \in \mathbb{C} : |z - z_1| - |z - z_2| = |z_1 - z_2| \right\}$
+represents a:
+\begin{enumerate}
+    \item straight line with sum of its intercepts on the coordinate axes equals $14$
+    \item hyperbola with the length of the transverse axis $7$
+    \item straight line with the sum of its intercepts on the coordinate axes equals $-18$
+    \item hyperbola with eccentricity $2$
+\end{enumerate}
+\item The distance of the point $\left( 6, -2\sqrt{2} \right)$ from the common tangent $y = mx + c$, $m > 0$, of the curves $x = 2y^2$ and $x = 1 + y^2$ is:
+\begin{enumerate}
+    \item $\frac{1}{3}$
+    \item $5$
+    \item $\frac{14}{3}$
+    \item $5\sqrt{3}$
+\end{enumerate}
+
+\item Let $S_1$ and $S_2$ be respectively the sets of all $a \in \mathbb{R} \setminus \{0\}$ for which the system of linear equations:
+\[
+ax + 2ay - 3az = 1
+\]
+\[
+(2a + 1)x + (2a + 3)y + (a + 1)z = 2
+\]
+\[
+(3a + 5)x + (a + 5)y + (a + 2)z = 3
+\]
+has a unique solution and infinitely many solutions. Then:
+\begin{enumerate}
+    \item $n(S_1) = 2$ and $S_2$ is an infinite set
+    \item $S_1$ is an infinite set and $n(S_2) = 2$
+    \item $S_1 = \emptyset$ and $S_2 = \mathbb{R} \setminus \{0\}$
+    \item $S_1 = \mathbb{R} \setminus \{0\}$ and $S_2 = \emptyset$
+\end{enumerate}
+\item Let $f(x) = \int \frac{2x}{(x^2 + 1)(x^2 + 3)} \, dx$. If $f(3) = \frac{1}{2} (\log_e 5 - \log_e 6)$, then $f(4)$ is equal to:
+\begin{enumerate}
+    \item $\frac{1}{2} (\log_e 17 - \log_e 19)$
+    \item $\log_e 17 - \log_e 18$
+    \item $\frac{1}{2} (\log_e 19 - \log_e 17)$
+    \item $\log_e 19 - \log_e 20$
+\end{enumerate}
+
+
+
+
+
+    
+
+\end{enumerate}
+
+
+
+
+
+
+\end{document}i
