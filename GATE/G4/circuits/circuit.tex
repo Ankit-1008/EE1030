@@ -1,0 +1,52 @@
+\begin{figure}[t]
+\centering
+\resizebox{0.5\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+\draw [line width=1pt, short] (3.25,8.5) -- (7.75,8.5);
+\draw [line width=1pt, short] (3.25,10.5) -- (7.75,10.5);
+\draw [line width=0.7pt, <->, >=Stealth] (3.75,10.5) -- (3.75,8.5);
+\draw [line width=0.7pt, dashed] (5.25,8.5) -- (7.25,8.5);
+\draw [line width=0.7pt, dashed] (5.25,8.5) -- (7.25,8.5);
+\draw [line width=0.7pt, dashed] (5.25,10.5) -- (5.25,8.5);
+\draw [line width=0.7pt, dashed] (5.25,8.5) -- (7,10.5);
+\draw [line width=0.7pt, ->, >=Stealth] (5.25,10.25) -- (6.75,10.25);
+\draw [line width=0.7pt, ->, >=Stealth] (5.25,9.75) -- (6.25,9.75);
+\draw [line width=0.7pt, ->, >=Stealth] (5.25,9.25) -- (5.75,9.25);
+\draw [line width=0.7pt, ->, >=Stealth] (5.25,10.5) -- (7,10.5);
+\node [font=\normalsize] at (6,10.75) {$U_0$};
+\node [font=\normalsize] at (4.25,9.5) {$10 mm$};
+\end{circuitikz}
+}%
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\resizebox{0.4\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\scriptsize]
+
+\draw [short] (4.25,10.25) -- (4.25,8);
+\draw [short] (4.25,8) -- (6.5,8);
+\draw [short] (6.5,10.25) -- (6.5,9);
+\draw [short] (6.5,9) .. controls (5.75,8.75) and (6,8.25) .. (6.5,8);
+\draw [short] (6.5,10) -- (7,10);
+\draw [short] (6.5,9) -- (7,9);
+\draw [dashed] (6.5,10) -- (4.25,10);
+\draw [<->, >=Stealth] (6.75,10) -- (6.75,9);
+\draw [->, >=Stealth] (5,8.5) -- (5,9);
+\draw [->, >=Stealth] (5,8.5) -- (5.75,8.5);
+\draw [short] (5.5,10) -- (5.25,9.75);
+\draw [short] (5.5,10) -- (5.75,9.75);
+\draw [short] (5.25,9.75) -- (5.75,9.75);
+\draw [line width=0.2pt, ->, >=Stealth] (6.75,8.25) -- (6.25,8.75);
+\node [font=\normalsize] at (6.75,8.25) {x};
+\node [font=\scriptsize] at (7.25,9.5) {2 m};
+\node [font=\small] at (7.25,8.25) {gate};
+\node [font=\small] at (5.75,8.25) {x};
+
+\end{circuitikz}
+}%
+
+\label{fig:my_label}
+\end{figure}
