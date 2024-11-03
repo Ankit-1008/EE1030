@@ -1,0 +1,165 @@
+%iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,onecolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+%\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{float}
+\usepackage{circuitikz}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+
+% Marks the beginning of the document
+\begin{document}
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{2022-PH-14-26}
+\author{EE24BTECH11004 - ANKIT JAINAR}
+\maketitle
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\setlength{\columnsep}{2.5em}
+\begin{enumerate}
+    \item What is the maximum number of free independent real parameters specifying an n-dimensional orthogonal matrix?
+    \begin{enumerate}
+        \item $n\brak{n-2}$
+        \item $\brak{n-1}^2$
+        \item $\frac{n\brak{n-1}}{2}$
+        \item $\frac{n\brak{n+1}}{2}$
+    \end{enumerate}
+
+    \item An excited state of Ca atom is $[\text{Mg}]3p^54s^23d^1$. The spectroscopic terms corresponding to the total orbital angular momentum are
+    \begin{enumerate}
+        \item S, P, and D
+        \item P, D, and F
+        \item P and D
+        \item S and P
+    \end{enumerate}
+
+    \item On the surface of a spherical shell enclosing a charge-free region, the electrostatic potential values are as follows: One quarter of the area has potential $\phi_0$, another quarter has potential $2\phi_0$, and the rest has potential $4\phi_0$. The potential at the centre of the shell is
+    (You can use a property of the solution of Laplace's equation.)
+    \begin{enumerate}
+        \item $\frac{11}{4} \phi_0$
+        \item $\frac{11}{2} \phi_0$
+        \item $\frac{7}{3} \phi_0$
+        \item $\frac{7}{4} \phi_0$
+    \end{enumerate}
+    \item A point charge $q$ is performing simple harmonic oscillations of amplitude $A$ at angular frequency $\omega$. Using Larmor's formula, the power radiated by the charge is proportional to
+\begin{enumerate}
+    \item $q \, \omega^2 A^2$
+    \item $q \, \omega^4 A^2$
+    \item $q^2 \omega^2 A^2$
+    \item $q^2 \omega^4 A^2$
+\end{enumerate}
+\item Which of the following relationships between the internal energy $U$ and the Helmholtz free energy $F$ is true?
+\begin{enumerate}
+    \item $U = -T^2 \left[ \frac{\partial}{\partial T} \left( \frac{F}{T} \right) \right]_V$
+    \item $U = +T^2 \left[ \frac{\partial}{\partial T} \left( \frac{F}{T} \right) \right]_V$
+    \item $U = +T \left[ \frac{\partial F}{\partial T} \right]_V$
+    \item $U = -T \left[ \frac{\partial F}{\partial T} \right]_V$
+\end{enumerate}
+\item If nucleons in a nucleus are considered to be confined in a three-dimensional cubical box, then the first four magic numbers are
+\begin{enumerate}
+    \item$2, 8, 20, 28$
+    \item $2, 8, 16, 24$
+    \item $2, 8, 14, 20$
+    \item $2, 10, 16, 28$
+\end{enumerate}
+
+\item Consider the ordinary differential equation
+$y'' - 2xy' + 4y = 0$
+and its solution $y(x) = a + bx + cx^2$. Then
+\begin{enumerate}
+    \item $a = 0$, $c = -2b \neq 0$
+    \item $c = -2a \neq 0$, $b = 0$
+    \item $b = -2a \neq 0$, $c = 0$
+    \item $c = 2a \neq 0$, $b = 0$
+\end{enumerate}
+\item For an Op-Amp based negative feedback, non-inverting amplifier, which of the following statements are true?
+\begin{enumerate}
+    \item Closed loop gain $<$ Open loop gain
+    \item Closed loop bandwidth $<$ Open loop bandwidth
+    \item Closed loop input impedance $>$ Open loop input impedance
+    \item Closed loop output impedance $<$ Open loop output impedance
+\end{enumerate}
+
+\item From the pairs of operators given below, identify the ones which commute. Here $l$ and $j$ correspond to the orbital angular momentum and the total angular momentum, respectively.
+\begin{enumerate}
+    \item $l^2, j^2$
+    \item $j^2, j_z$
+    \item $j^2, l_z$
+    \item $l_z, j_z$
+\end{enumerate}
+\item For normal Zeeman lines observed $\parallel$ and $\perp$ to the magnetic field applied to an atom, which of the following statements are true?
+    \begin{enumerate}
+        \item Only $\pi$-lines are observed $\parallel$ to the field
+        \item $\sigma$-lines $\perp$ to the field are plane polarized
+        \item $\pi$-lines $\perp$ to the field are plane polarized
+        \item Only $\sigma$-lines are observed $\parallel$ to the field
+    \end{enumerate}
+
+    \item Pauli spin matrices satisfy
+    \begin{enumerate}
+        \item $\sigma_{\alpha} \sigma_{\beta} - \sigma_{\beta} \sigma_{\alpha} = i \epsilon_{\alpha \beta \gamma} \sigma_{\gamma}$
+        \item $\sigma_{\alpha} \sigma_{\beta} - \sigma_{\beta} \sigma_{\alpha} = 2i \epsilon_{\alpha \beta \gamma} \sigma_{\gamma}$
+        \item $\sigma_{\alpha} \sigma_{\beta} + \sigma_{\beta} \sigma_{\alpha} = \epsilon_{\alpha \beta \gamma} \sigma_{\gamma}$
+        \item $\sigma_{\alpha} \sigma_{\beta} + \sigma_{\beta} \sigma_{\alpha} = 2\delta_{\alpha \beta}$
+    \end{enumerate}
+    \item For the refractive index $n = n_r(\omega) + i n_{im}(\omega)$ of a material, which of the following statements are correct?
+\begin{enumerate}
+    \item $n_r$ can be obtained from $n_{im}$ and vice versa
+    \item $n_{im}$ could be zero
+    \item $n$ is an analytic function in the upper half of the complex $\omega$ plane
+    \item $n$ is independent of $\omega$ for some materials
+\end{enumerate}
+
+\item Complex function $f(z) = z + |z - a|^2$ ($a$ is a real number) is
+\begin{enumerate}
+    \item continuous at $(a, a)$
+    \item complex-differentiable at $(a, a)$
+    \item complex-differentiable at $(a, 0)$
+    \item analytic at $(a, 0)$
+\end{enumerate}
+
+\end{enumerate}
+\end{document} 
