@@ -1,0 +1,214 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\geometry{a4paper, margin=1in}
+
+\definecolor{codebg}{rgb}{0.95,0.95,0.95}
+\lstset{
+    backgroundcolor=\color{codebg},
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue}\bfseries,
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red},
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny,
+    numbersep=5pt,
+    tabsize=4,
+    language=C,
+    showspaces=false,
+    showstringspaces=false,
+    breaklines=true,
+    captionpos=b
+}
+
+\title{SOFTWARE ASSIGNMENT}
+\author{EE24BTECH11004 - ANKIT}
+
+\begin{document}
+\maketitle
+
+\section{What Are Eigenvalues?}
+
+Eigenvalues are a fundamental concept in linear algebra, widely used in mathematics, physics, engineering, and computer science. They describe important properties of matrices and linear transformations.
+
+\subsection{Formal Definition}
+
+Given a square matrix $A$ of size $n \times n$, a scalar $\lambda$ is called an \textbf{eigenvalue} of $A$ if there exists a non-zero vector $\mathbf{v}$ (called an \textbf{eigenvector}) such that:
+$A \mathbf{v} = \lambda \mathbf{v}.$
+
+Here:
+\begin{itemize}
+    \item $A$: The matrix representing the linear transformation.
+    \item $\mathbf{v}$: The eigenvector associated with $\lambda$.
+    \item $\lambda$: The eigenvalue.
+\end{itemize}
+
+\subsection{Key Points}
+\begin{itemize}
+    \item \textbf{Geometric Interpretation:}
+    Eigenvalues represent \textit{scaling factors} by which eigenvectors are stretched or compressed during the linear transformation defined by $A$. Eigenvectors remain in the same or opposite direction after the transformation.
+    
+    \item \textbf{Algebraic Interpretation:}
+    To find eigenvalues, we solve the \textit{characteristic equation}:
+    $\det(A - \lambda I) = 0,$
+    where $I$ is the identity matrix of the same size as $A$.
+\end{itemize}
+
+\subsection{Examples}
+\begin{enumerate}
+    \item \textbf{Diagonal Matrix:} \\
+    If $A = \begin{bmatrix} 3 & 0 \\ 0 & 5 \end{bmatrix}$, the eigenvalues are the diagonal elements:
+    $\lambda_1 = 3, \quad \lambda_2 = 5.$
+    
+    \item \textbf{Non-Diagonal Matrix:} \\
+    For $A = \begin{bmatrix} 1 & 2 \\ 2 & 1 \end{bmatrix}$, the eigenvalues are obtained by solving:
+    $\det\left(\begin{bmatrix} 1 & 2 \\ 2 & 1 \end{bmatrix} - \lambda \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}\right) = 0.$
+    The eigenvalues are:
+    $\lambda_1 = 3, \quad \lambda_2 = -1.$
+\end{enumerate}
+
+\subsection{Properties of Eigenvalues}
+\begin{itemize}
+    \item \textbf{Trace and Determinant:}
+    \begin{itemize}
+        \item The sum of the eigenvalues equals the \textbf{trace} of the matrix: $\text{tr}(A) = \sum \lambda_i.$
+        \item The product of the eigenvalues equals the \textbf{determinant} of the matrix: $\det(A) = \prod \lambda_i.$
+    \end{itemize}
+    
+    \item \textbf{Multiplicity:}
+    \begin{itemize}
+        \item \textit{Algebraic Multiplicity:} The number of times an eigenvalue $\lambda$ appears as a root of the characteristic polynomial.
+        \item \textit{Geometric Multiplicity:} The dimension of the eigenspace corresponding to $\lambda$ (the set of all eigenvectors associated with $\lambda$).
+    \end{itemize}
+    
+    \item \textbf{Symmetric Matrices:}
+    \begin{itemize}
+        \item All eigenvalues of symmetric matrices are real.
+        \item Eigenvectors corresponding to different eigenvalues are orthogonal.
+    \end{itemize}
+    
+    \item \textbf{Stability Analysis:}
+    Eigenvalues determine the stability of dynamical systems:
+    \begin{itemize}
+        \item If all eigenvalues have negative real parts, the system is stable.
+        \item Positive real parts indicate instability.
+    \end{itemize}
+\end{itemize}
+
+\section{Implementation in C}
+Below is the library used for implementing code
+\lstinputlisting[language=C]{lib.c}
+
+Below is a detailed explanation of the QR algorithm implementation in C.
+
+\subsubsection{QR Decomposition Function}
+The \texttt{qr\_decomposition()} function performs the QR decomposition of matrix $A$ into matrices $Q$ and $R$ using the Modified Gram-Schmidt process. It ensures $Q$ is orthogonal, and $R$ is upper triangular.
+
+\lstinputlisting[language=C]{qrdecomposition.c}
+
+\begin{itemize}
+    \item \textbf{Orthogonalization:} Each column of $A$ is iteratively orthogonalized with respect to the previous columns.  
+    $R[i][j] = Q[:, i]^T \cdot A[:, j]$  
+    $Q[:, j] = A[:, j] - \sum_{i=0}^{j-1} R[i][j] \cdot Q[:, i]$
+    \item \textbf{Normalization:} After orthogonalization, each column vector of $Q$ is normalized:  
+    $Q[:, j] = \frac{Q[:, j]}{\|Q[:, j]\|}$
+\end{itemize}
+
+\subsubsection{Matrix Multiplication Function}
+The \texttt{multiply\_matrices()} function computes the product $R \cdot Q$, updating the matrix $A$ in each iteration.
+
+\lstinputlisting[language=C]{matrixmultiplication.c}
+
+\begin{itemize}
+    \item This step recomposes the matrix $A$ using:  
+    $A' = R \cdot Q$  
+    where $R$ is upper triangular, and $Q$ is orthogonal from the previous decomposition.
+    \item This operation ensures that the matrix evolves toward a diagonal form as the iterations proceed.
+\end{itemize}
+
+\subsubsection{Diagonal Check Function}
+The \texttt{is\_diagonal()} function verifies if $A$ is sufficiently close to a diagonal matrix by comparing the magnitude of off-diagonal elements to a tolerance value (\texttt{TOL}).
+
+\lstinputlisting[language=C]{diagonalcheck.c}
+
+\begin{itemize}
+    \item \textbf{Tolerance Comparison:} If all off-diagonal elements satisfy:  
+    $|A[i][j]| < \text{TOL}, \quad \forall \, i \neq j$  
+    the matrix is considered diagonal.
+    \item \textbf{Purpose:} Ensures convergence by monitoring the evolution of $A$ during iterations.
+\end{itemize}
+
+\subsubsection{Main Iterative Loop}
+The iterative loop orchestrates the steps of the QR algorithm until $A$ converges to a diagonal matrix or the maximum number of iterations (\texttt{MAX\_ITER}) is reached.
+
+\lstinputlisting[language=C]{main.c}
+
+\begin{itemize}
+    \item \textbf{Step 1:} Perform QR decomposition of $A$ into $Q$ and $R$.
+    \item \textbf{Step 2:} Update $A$ using the matrix product $R \cdot Q$.
+    \item \textbf{Step 3:} Check convergence using \texttt{is\_diagonal()}.
+    \item \textbf{Step 4:} Extract eigenvalues from the diagonal elements of $A$ if convergence is achieved:  
+    $\text{Eigenvalues: } \lambda_i = A[i][i], \quad i = 1, 2, \ldots, n$
+\end{itemize}
+
+\section*{Time Complexity Analysis}
+
+The given program implements the QR algorithm to compute the eigenvalues of a square matrix of size $n \times n$. The time complexity can be summarized as follows:
+
+\begin{itemize}
+    \item \textbf{QR Decomposition:} $O(n^3)$  
+    This step involves orthogonalization and normalization, both contributing to $O(n^3)$.
+
+    \item \textbf{Matrix Multiplication:} $O(n^3)$  
+    Multiplying two $n \times n$ matrices takes $O(n^3)$.
+
+    \item \textbf{Diagonal Check:} $O(n^2)$  
+    Checking if the matrix is diagonal requires examining $n^2$ elements.
+
+    \item \textbf{Overall Per Iteration:} $O(n^3)$  
+    The dominant operations in each iteration are QR decomposition and matrix multiplication.
+
+    \item \textbf{Total Complexity:} $O(k \cdot n^3)$  
+    where $k$ is the number of iterations required for convergence. In the worst case, $k = \text{MAX\_ITER}$, making the complexity:  
+    $O(\text{MAX\_ITER} \cdot n^3)$  
+    If \texttt{MAX\_ITER} is treated as a constant, the complexity simplifies to $O(n^3)$ for practical purposes.
+\end{itemize}
+
+\section*{Efficiency Analysis of the QR Algorithm}
+
+\subsection*{Strengths}
+\begin{itemize}
+    \item \textbf{Accuracy:} The QR algorithm is numerically stable and provides precise eigenvalues, particularly for symmetric or Hermitian matrices.
+    \item \textbf{Versatility:} It can handle both real and complex eigenvalues effectively.
+    \item \textbf{Reliability:} The algorithm is robust and well-studied for most types of square matrices.
+\end{itemize}
+
+\subsection*{Weaknesses}
+\begin{itemize}
+    \item \textbf{Computational Cost:} 
+    The time complexity is $O(k \cdot n^3)$, where $k$ is the number of iterations required for convergence. This can be expensive for large matrices.
+    \item \textbf{Scalability:} The algorithm is inefficient for very large matrices, where iterative methods such as Lanczos or Arnoldi are more suitable.
+\end{itemize}
+
+\subsection*{Practical Use}
+\begin{itemize}
+    \item \textbf{Small Matrices:} Efficient and accurate for matrices with $n < 1000$.
+    \item \textbf{Large Matrices:} Computationally expensive, making iterative methods a better choice for high-dimensional problems.
+\end{itemize}
+
+\subsection{Output of the Program}
+When the above code is run, the following results are printed:
+\begin{itemize}
+    \item The original matrix $A$.
+    \item The computed eigenvalues.
+\end{itemize}
+\lstinputlisting[language={[LaTeX]TeX}, caption={input}]{input.tex}
+\lstinputlisting[language={[LaTeX]TeX}, caption={output}]{output.tex}
+
+
+\end{document}
