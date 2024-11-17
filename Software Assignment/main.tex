@@ -100,6 +100,49 @@ Here:
     \end{itemize}
 \end{itemize}
 
+\subsection{Conclusion}
+Eigenvalues provide critical insight into the behavior of a matrix and the systems it represents. They are indispensable in solving practical problems across scientific and engineering domains.
+\section{Chosen Algorithm: Jacobi Method}
+The Jacobi method is an iterative algorithm primarily used for computing the eigenvalues of real symmetric matrices. It transforms the matrix into a diagonal form through successive orthogonal similarity transformations, where the diagonal elements eventually approximate the eigenvalues.
+
+\subsection{Description of the Jacobi Method}
+Given a symmetric matrix $A$, the method aims to zero out the largest off-diagonal elements through a series of rotations. Each rotation targets a specific pair of indices $(p, q)$ to reduce the value of $A_{pq}$ to zero, thereby moving the matrix closer to a diagonal form.
+
+\subsection{Algorithm Steps}
+\begin{enumerate}
+    \item Find the largest off-diagonal element $a_{pq}$.
+    \item Compute the rotation angle $\theta$ to zero out $a_{pq}$ using:
+    \[
+    \theta = \frac{1}{2} \tan^{-1} \left( \frac{2a_{pq}}{a_{pp} - a_{qq}} \right)
+    \]
+    \item Construct the rotation matrix $P$ and apply the transformation $A' = P^T A P$.
+    \item Repeat until all off-diagonal elements are below a given tolerance.
+\end{enumerate}
+
+\section{Time Complexity Analysis}
+The Jacobi method has a per-iteration complexity of $O(n^3)$ for an $n \times n$ matrix due to matrix multiplication and rotation operations. The total complexity depends on the number of iterations required for convergence, typically making it less suitable for very large matrices compared to methods such as the QR algorithm.
+
+\section{Other Insights}
+\subsection{Memory Usage}
+The method requires $O(n^2)$ space for storing matrix elements, making it feasible for small to moderately sized matrices.
+
+\subsection{Convergence Rate}
+The Jacobi method exhibits quadratic convergence for symmetric matrices. Although slower than other methods such as the QR algorithm, it can achieve high accuracy for all eigenvalues when convergence is reached.
+
+\subsection{Suitability}
+The Jacobi method is best suited for small to medium-sized symmetric matrices, where its simplicity and accuracy are advantageous. It is less efficient for large matrices or non-symmetric matrices, where other methods, like the QR algorithm, perform better.
+
+\section{Comparison of Algorithms}
+\begin{itemize}
+    \item \textbf{Jacobi Method}: Complexity of $O(n^3)$ per iteration; accurate and straightforward for symmetric matrices; slower convergence but robust for smaller problems.
+    \item \textbf{QR Algorithm}: Generally faster convergence for large matrices; handles both symmetric and non-symmetric matrices; $O(n^3)$ complexity per iteration.
+    \item \textbf{Power Iteration}: Efficient for finding the dominant eigenvalue; $O(n^2)$ per iteration; limited to finding one eigenvalue at a time.
+    \item \textbf{Divide-and-Conquer Methods}: Faster for large matrices but more complex to implement; used in advanced libraries for dense eigenproblems.
+\end{itemize}
+
+\section{Conclusion}
+The Jacobi method is a robust approach for computing the eigenvalues of symmetric matrices. While it may be slower and less efficient for large-scale problems, it offers simplicity and high accuracy in cases where it is applicable.
+
 \section{Implementation in C}
 Below is the library used for implementing code
 \lstinputlisting[language=C]{lib.c}
