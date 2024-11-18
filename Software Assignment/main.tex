@@ -102,46 +102,76 @@ Here:
 
 \subsection{Conclusion}
 Eigenvalues provide critical insight into the behavior of a matrix and the systems it represents. They are indispensable in solving practical problems across scientific and engineering domains.
-\section{Chosen Algorithm: Jacobi Method}
-The Jacobi method is an iterative algorithm primarily used for computing the eigenvalues of real symmetric matrices. It transforms the matrix into a diagonal form through successive orthogonal similarity transformations, where the diagonal elements eventually approximate the eigenvalues.
+\section{Introduction}
+Eigenvalue computation plays a pivotal role in numerous applications across mathematics, physics, engineering, and computer science. Typical uses include solving systems of differential equations, analyzing the stability of systems, and performing matrix decompositions in numerical methods. This report focuses on the QR algorithm, a widely used iterative method for computing the eigenvalues of general matrices. The QR algorithm, which relies on orthogonal transformations, is particularly effective for large matrices and is commonly employed in numerical linear algebra due to its efficiency and robustness.
 
-\subsection{Description of the Jacobi Method}
-Given a symmetric matrix $A$, the method aims to zero out the largest off-diagonal elements through a series of rotations. Each rotation targets a specific pair of indices $(p, q)$ to reduce the value of $A_{pq}$ to zero, thereby moving the matrix closer to a diagonal form.
+\section{Chosen Algorithm: QR Algorithm}
+
+The QR algorithm is an iterative method used for computing the eigenvalues of a square matrix. By repeatedly decomposing the matrix into orthogonal ($Q$) and upper triangular ($R$) matrices and recomposing it, the algorithm drives the matrix closer to an upper triangular form, where the diagonal elements approximate the eigenvalues.
+
+\subsection{Description of the QR Algorithm}
+
+Given a square matrix $A$, the QR algorithm applies the following iterative process:
+
+\begin{enumerate}
+    \item Perform a \textbf{QR decomposition}: Decompose the matrix $A_k$ into $Q_k$ (an orthogonal matrix) and $R_k$ (an upper triangular matrix) such that:
+    $A_k = Q_k R_k$.
+
+    \item Recompose the matrix: Compute the next iteration matrix as:
+    $A_{k+1} = R_k Q_k$.
+
+    \item \textbf{Apply a shift} to accelerate convergence:
+    $A_k - \mu_k I = Q_k R_k$, $A_{k+1} = R_k Q_k + \mu_k I$,
+    where $\mu_k$ is a scalar shift (e.g., the bottom-right element of $A_k$).
+\end{enumerate}
 
 \subsection{Algorithm Steps}
+
 \begin{enumerate}
-    \item Find the largest off-diagonal element $a_{pq}$.
-    \item Compute the rotation angle $\theta$ to zero out $a_{pq}$ using:
-    \[
-    \theta = \frac{1}{2} \tan^{-1} \left( \frac{2a_{pq}}{a_{pp} - a_{qq}} \right)
-    \]
-    \item Construct the rotation matrix $P$ and apply the transformation $A' = P^T A P$.
-    \item Repeat until all off-diagonal elements are below a given tolerance.
+    \item \textbf{Initialization}: Start with the matrix $A_0 = A$.
+    \item \textbf{Iterative Process}:
+        \begin{itemize}
+            \item Compute $Q_k$ and $R_k$ from the QR decomposition of $A_k$.
+            \item Update $A_{k+1} = R_k Q_k$ (with or without shifts).
+        \end{itemize}
+    \item \textbf{Convergence Check}: Terminate when the off-diagonal elements of $A_k$ are below a predefined tolerance, indicating that $A_k$ is close to diagonal.
+    \item \textbf{Output}: Extract eigenvalues from the diagonal elements of $A_k$.
 \end{enumerate}
 
 \section{Time Complexity Analysis}
-The Jacobi method has a per-iteration complexity of $O(n^3)$ for an $n \times n$ matrix due to matrix multiplication and rotation operations. The total complexity depends on the number of iterations required for convergence, typically making it less suitable for very large matrices compared to methods such as the QR algorithm.
+
+\begin{itemize}
+    \item \textbf{Per Iteration}: The QR decomposition has a complexity of $O(n^3)$ for an $n \times n$ matrix.
+    \item \textbf{Overall Complexity}: The total number of iterations depends on the matrix properties and the use of shifts. Typically, the QR algorithm converges faster with shifts, especially for well-conditioned matrices.
+\end{itemize}
 
 \section{Other Insights}
+
 \subsection{Memory Usage}
-The method requires $O(n^2)$ space for storing matrix elements, making it feasible for small to moderately sized matrices.
+The QR algorithm requires $O(n^2)$ space to store the matrix and intermediate results, making it suitable for dense matrices.
 
 \subsection{Convergence Rate}
-The Jacobi method exhibits quadratic convergence for symmetric matrices. Although slower than other methods such as the QR algorithm, it can achieve high accuracy for all eigenvalues when convergence is reached.
+\begin{itemize}
+    \item \textbf{Without shifts}: The algorithm exhibits linear convergence and may require many iterations.
+    \item \textbf{With shifts}: Convergence is significantly faster, often quadratic, for symmetric matrices.
+\end{itemize}
 
 \subsection{Suitability}
-The Jacobi method is best suited for small to medium-sized symmetric matrices, where its simplicity and accuracy are advantageous. It is less efficient for large matrices or non-symmetric matrices, where other methods, like the QR algorithm, perform better.
+The QR algorithm is highly versatile, handling both real symmetric and non-symmetric matrices effectively. It is preferred for dense matrices and general eigenvalue problems.
 
 \section{Comparison of Algorithms}
+
 \begin{itemize}
-    \item \textbf{Jacobi Method}: Complexity of $O(n^3)$ per iteration; accurate and straightforward for symmetric matrices; slower convergence but robust for smaller problems.
-    \item \textbf{QR Algorithm}: Generally faster convergence for large matrices; handles both symmetric and non-symmetric matrices; $O(n^3)$ complexity per iteration.
-    \item \textbf{Power Iteration}: Efficient for finding the dominant eigenvalue; $O(n^2)$ per iteration; limited to finding one eigenvalue at a time.
-    \item \textbf{Divide-and-Conquer Methods}: Faster for large matrices but more complex to implement; used in advanced libraries for dense eigenproblems.
+    \item \textbf{QR Algorithm}: Handles both symmetric and non-symmetric matrices; robust for large problems; complexity of $O(n^3)$ per iteration.
+    \item \textbf{Jacobi Method}: Slower convergence; tailored for symmetric matrices; best suited for small to medium-sized problems.
+    \item \textbf{Power Iteration}: Efficient for computing a single dominant eigenvalue; $O(n^2)$ per iteration but limited in scope.
+    \item \textbf{Divide-and-Conquer}: Faster for large symmetric matrices; more complex to implement; suitable for advanced numerical libraries.
 \end{itemize}
 
 \section{Conclusion}
-The Jacobi method is a robust approach for computing the eigenvalues of symmetric matrices. While it may be slower and less efficient for large-scale problems, it offers simplicity and high accuracy in cases where it is applicable.
+
+The QR algorithm is a robust and versatile method for eigenvalue computation, particularly for dense matrices. While computationally expensive for very large matrices, its ability to handle general matrix types and its accelerated convergence with shifts make it a standard choice in numerical linear algebra.
+
 
 \section{Implementation in C}
 Below is the library used for implementing code
